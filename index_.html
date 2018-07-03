@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>I Love You</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 你说情人节给我答复的时候,</span><br />
+				<span class="space"/><span class="comments">* 我就想要不要做一点东西好，然后就弄了这东西，</span><br />
+				<span class="space"/><span class="comments">* 无论结果如何希望你能喜欢，还是写了挺久的代码。</span><br >
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy I = <span class="keyword">new</span> Boy(<span class="string">"志强"</span>);  (男孩"I"叫志强)<br />
+				Girl U = <span class="keyword">new</span> Girl(<span class="string">"然"</span>); (女孩"U"叫然)<br />
+				<span class="comments">// 2017.2.5 00:01, 我向你表白。 </span><br />
+				I.love(U);<br />
+				<span class="comments">// 讲真的，很希望你能接受我。</span><br />
+				U.accepted();<br />
+				<span class="comments">// 那天起，很经常都在想着你。</span><br />
+				I.miss(U);<br />
+				<span class="comments">// 如果可以，我想一直照顾你。</span><br />
+				I.takecareof(U);<br />
+				<span class="comments">// 也有可能你一时半会也没有接受吧。</span><br />
+				<span class="comments">// 但是我可以等，这点信心还是有的，虽然快三十岁的说。</span><br />
+				<span class="comments">// 以前很多事情都是嘴上说说没有做，但是以后很多事我都会做。</span><br />
+				<span class="comments">// 或者你有什么事我是无论在做什么都会先停下来解决你的先。</span><br />
+				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isHesitate) {<br />
+				<span class="placeholder"/>I.waitFor(U);  （我愿意等你）。<br/>
+				<span class="placeholder"/><span class="comments">// 我知道这是很重要的决定。</span><br />
+				<span class="placeholder"/><span class="comments">// 所以你要好好想清楚啊。</span><br />
+				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+				}<br />
+				<span class="comments">// 本来要用你的照片做背景，但是发现字会看不清楚。</span><br />
+				<span class="comments">// 所以那些照片就留给我自己了，哈哈。</span><br />
+				<span class="comments">// 还有好多话想说，但是这里好像不够位置了。</span><br />
+				<span class="comments">// 感觉说的有点乱，哈哈;</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						然，从我向你表白到现在已经有
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						想和你过很多个情人节.<br/>
+						<div class="signature">- 涂志强</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		 
+	</div>
+
+	<audio autoplay="autoplay" height="100" width="100">
+  		<source src="多幸运.mp3" type="audio/mp3" />
+  		<source src="多幸运.ogg" type="audio/ogg" />
+  		<embed height="100" width="100" src="多幸运.mp3" />
+	</audio>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 1, 05);
+		together.setHours(00);
+		together.setMinutes(01);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 68000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
